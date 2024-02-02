@@ -6,7 +6,7 @@ import {Multicall} from "../lib/openzeppelin-contracts/contracts/utils/Multicall
 
 import {ISmartAccount} from "./ISmartAccount.sol";
 
-contract AdminAccount is Ownable, Multicall, ISmartAccount {
+contract SmartAccount is Ownable, Multicall, ISmartAccount {
     constructor(address admin) Ownable(admin) {}
 
     /// @inheritdoc ISmartAccount
