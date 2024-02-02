@@ -3,12 +3,12 @@ pragma solidity ^0.8.0;
 
 import {Ownable} from "../lib/openzeppelin-contracts/contracts/access/Ownable.sol";
 
-import {IAdminAccount} from "./IAdminAccount.sol";
+import {ISmartAccount} from "./ISmartAccount.sol";
 
-contract AdminAccount is Ownable, IAdminAccount {
+contract AdminAccount is Ownable, ISmartAccount {
     constructor(address admin) Ownable(admin) {}
 
-    /// @inheritdoc IAdminAccount
+    /// @inheritdoc ISmartAccount
     function performCall(address to, uint256 value, bytes calldata data)
         external
         onlyOwner
@@ -17,7 +17,7 @@ contract AdminAccount is Ownable, IAdminAccount {
         (success, returnValue) = to.call{value: value}(data);
     }
 
-    /// @inheritdoc IAdminAccount
+    /// @inheritdoc ISmartAccount
     function performDelegateCall(address to, bytes calldata data)
         external
         onlyOwner

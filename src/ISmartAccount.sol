@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-interface IAdminAccount {
+interface ISmartAccount {
     /// @notice Executes an arbitrary blockchain call.
     function performCall(address to, uint256 value, bytes calldata data)
         external
