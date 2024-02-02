@@ -2,10 +2,11 @@
 pragma solidity ^0.8.0;
 
 import {Ownable} from "../lib/openzeppelin-contracts/contracts/access/Ownable.sol";
+import {Multicall} from "../lib/openzeppelin-contracts/contracts/utils/Multicall.sol";
 
 import {ISmartAccount} from "./ISmartAccount.sol";
 
-contract AdminAccount is Ownable, ISmartAccount {
+contract AdminAccount is Ownable, Multicall, ISmartAccount {
     constructor(address admin) Ownable(admin) {}
 
     /// @inheritdoc ISmartAccount
