@@ -1,0 +1,9 @@
+{
+  "smartAccountModules": "0xdF19f5Fcd5F8F1bd3C387422FC65109F5117F990",
+  "smartAccountBaseInstaller": "0x4811864B715C0F1B0f9790a8ee6F11dC25b7F258",
+  "modules": {
+    "ownable": "0x2F3Cec4e1ACF883adD5A426c56789242612c2F39",
+    "erc165": "0xCa9FE66b1b6903c41e1A61eE20582bf48137765E",
+    "trustlessExecution": "0x9478eaab9F531533487c220C451820c3c7901e6b"
+  }
+}
