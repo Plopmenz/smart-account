@@ -24,7 +24,7 @@ contract SmartAccountTrustlessExecutionInstaller {
     }
 
     /// @notice Sets if `account` is allowed to execute actions for this smart account.
-    function setExecutePermission(address account, bool allowed) internal {
+    function setExecutePermission(address account, bool allowed) external {
         SmartAccountOwnableLib.ensureIsOwner(msg.sender);
         SmartAccountTrustlessExecutionLib.setExecutePermission(account, allowed);
     }

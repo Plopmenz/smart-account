@@ -37,6 +37,8 @@ contract SmartAccountTest is Test {
     }
 
     function test_modules(bytes4 functionSelector, address module) external {
+        vm.expectEmit(address(smartAccount));
+        emit ISmartAccountModules.ModuleSet(functionSelector, module);
         smartAccount.performDelegateCall(
             address(installer), abi.encodeWithSelector(installer.setModule.selector, functionSelector, module)
         );
@@ -44,6 +46,8 @@ contract SmartAccountTest is Test {
     }
 
     function test_ownable(address owner) external {
+        vm.expectEmit(address(smartAccount));
+        emit ISmartAccountOwnable.NewOwner(owner);
         smartAccount.performDelegateCall(
             address(installer), abi.encodeWithSelector(installer.transferOwnership.selector, owner)
         );

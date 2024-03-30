@@ -15,10 +15,11 @@ import {SmartAccount, ISmartAccount} from "../src/SmartAccount.sol";
 import {CallCounter} from "./mocks/CallCounter.sol";
 
 contract SmartAccountTrustlessExecutionTest is Test {
+    SmartAccountTrustlessExecutionTestInstaller public installer;
     ISmartAccountTrustlessExecutionTest public smartAccount;
 
     function setUp() public {
-        SmartAccountTrustlessExecutionTestInstaller installer = new SmartAccountTrustlessExecutionTestInstaller();
+        installer = new SmartAccountTrustlessExecutionTestInstaller();
 
         vm.expectEmit();
         emit ISmartAccountModules.ModuleSet(
@@ -35,6 +36,26 @@ contract SmartAccountTrustlessExecutionTest is Test {
         vm.expectRevert(abi.encodeWithSelector(ISmartAccountTrustlessExecution.NoExecutePermission.selector, executor));
         ISmartAccountTrustlessExecution.Action[] memory actions = new ISmartAccountTrustlessExecution.Action[](0);
         smartAccount.execute(bytes32(0), actions, 0);
+    }
+
+    function test_allowedExecutor(address executor) external {
+        vm.expectEmit(address(smartAccount));
+        emit ISmartAccountTrustlessExecution.ExecutePermissionSet(executor, true);
+        smartAccount.performDelegateCall(
+            address(installer), abi.encodeWithSelector(installer.setExecutePermission.selector, executor, true)
+        );
+
+        vm.startPrank(executor);
+        bytes32 callId = bytes32(0);
+        ISmartAccountTrustlessExecution.Action[] memory actions = new ISmartAccountTrustlessExecution.Action[](0);
+        uint256 allowedFailureMap = 0;
+        uint256 failureMap = 0;
+        bytes[] memory results = new bytes[](0);
+
+        vm.expectEmit(address(smartAccount));
+        emit ISmartAccountTrustlessExecution.Executed(executor, callId, actions, allowedFailureMap, failureMap, results);
+
+        smartAccount.execute(callId, actions, allowedFailureMap);
     }
 
     function test_interfaces() external view {
