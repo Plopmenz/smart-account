@@ -7,12 +7,6 @@ import {ISmartAccountModules} from "./ISmartAccountModules.sol";
 
 // Inspired by ERC-2535
 library SmartAccountModulesLib {
-    /// @notice When no function exists for function called
-    error FunctionNotFound(bytes4 functionSelector);
-
-    /// @notice Module is added/updated/removed.
-    event ModuleSet(bytes4 functionSelector, address module);
-
     bytes32 constant STORAGE_POSITION = keccak256("modules.smartaccount.plopmenz");
 
     struct Storage {
@@ -31,6 +25,18 @@ library SmartAccountModulesLib {
         SmartAccountERC165Lib.setInterfaceSupport(type(ISmartAccountModules).interfaceId, supported);
     }
 
+    /// @notice Installs all functions, interfaces, and performs storage initialization of this module.
+    function fullInstall(address module) internal {
+        setModule(ISmartAccountModules.getModule.selector, module);
+        setInterfaces(true);
+    }
+
+    /// @notice Uninstalls all functions and interfaces of this module.
+    function fullUninstall() internal {
+        setModule(ISmartAccountModules.getModule.selector, address(0));
+        setInterfaces(false);
+    }
+
     /// @notice Get the currently registered module for function.
     function getModule(bytes4 functionSelector) internal view returns (address module) {
         return getStorage().getFunction[functionSelector];
@@ -40,7 +46,7 @@ library SmartAccountModulesLib {
     /// @dev Set to zero address to remove.
     function setModule(bytes4 functionSelector, address module) internal {
         getStorage().getFunction[functionSelector] = module;
-        emit ModuleSet(functionSelector, module);
+        emit ISmartAccountModules.ModuleSet(functionSelector, module);
     }
 
     /// @notice Delegates the current msg call to a module, if one is registered for that function.
@@ -48,7 +54,7 @@ library SmartAccountModulesLib {
         // Get module from function selector
         address module = getModule(msg.sig);
         if (module == address(0)) {
-            revert FunctionNotFound(msg.sig);
+            revert ISmartAccountModules.FunctionNotFound(msg.sig);
         }
         // Execute external function from module using delegatecall and return any value.
         assembly {

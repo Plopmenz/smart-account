@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+import {SmartAccountModulesLib} from "../../src/modules/SmartAccountModulesLib.sol";
+
 contract CallCounter {
     error NotExpectedCaller();
 
@@ -18,12 +20,12 @@ contract CallCounter {
         }
     }
 
-    function setExpectedCaller(address caller) external {
-        getStorage().expectedCaller = caller;
-    }
-
     function totalCalls() external view returns (uint256 called) {
         return getStorage().called;
+    }
+
+    function setExpectedCaller(address caller) external {
+        getStorage().expectedCaller = caller;
     }
 
     function countCall() external {

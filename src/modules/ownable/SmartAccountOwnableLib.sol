@@ -2,16 +2,11 @@
 pragma solidity ^0.8.0;
 
 import {SmartAccountERC165Lib} from "../erc165/SmartAccountERC165Lib.sol";
+import {SmartAccountModulesLib} from "../SmartAccountModulesLib.sol";
 
 import {ISmartAccountOwnable} from "./ISmartAccountOwnable.sol";
 
 library SmartAccountOwnableLib {
-    /// @notice The caller account is not authorized to perform an operation.
-    error NotOwner(address account, address owner);
-
-    /// @notice A (new) account has become the owner of this contract.
-    event NewOwner(address account);
-
     bytes32 constant STORAGE_POSITION = keccak256("ownable.modules.smartaccount.plopmenz");
 
     struct Storage {
@@ -30,6 +25,19 @@ library SmartAccountOwnableLib {
         SmartAccountERC165Lib.setInterfaceSupport(type(ISmartAccountOwnable).interfaceId, supported);
     }
 
+    /// @notice Installs all functions, interfaces, and performs storage initialization of this module.
+    function fullInstall(address module, address initialOwner) internal {
+        SmartAccountOwnableLib.setOwner(initialOwner);
+        SmartAccountModulesLib.setModule(ISmartAccountOwnable.owner.selector, module);
+        setInterfaces(true);
+    }
+
+    /// @notice Uninstalls all functions and interfaces of this module.
+    function fullUninstall() internal {
+        SmartAccountModulesLib.setModule(ISmartAccountOwnable.owner.selector, address(0));
+        setInterfaces(false);
+    }
+
     /// @notice Returns the address of the current owner.
     function owner() internal view returns (address) {
         return getStorage().owner;
@@ -38,13 +46,13 @@ library SmartAccountOwnableLib {
     /// @notice Reverts if `account` is not the current owner.
     function ensureIsOwner(address account) internal view {
         if (account != owner()) {
-            revert NotOwner(account, owner());
+            revert ISmartAccountOwnable.NotOwner(account, owner());
         }
     }
 
     /// @notice Sets the address of the current owner.
     function setOwner(address account) internal {
         getStorage().owner = account;
-        emit NewOwner(account);
+        emit ISmartAccountOwnable.NewOwner(account);
     }
 }

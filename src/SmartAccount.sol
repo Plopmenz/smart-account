@@ -8,8 +8,8 @@ import {SmartAccountOwnableLib} from "./modules/ownable/SmartAccountOwnableLib.s
 import {ISmartAccount} from "./ISmartAccount.sol";
 
 contract SmartAccount is ISmartAccount {
-    constructor(address setup, bytes memory setupData) {
-        Address.functionDelegateCall(setup, setupData);
+    constructor(address installer, bytes memory installData) {
+        Address.functionDelegateCall(installer, installData);
     }
 
     /// @inheritdoc ISmartAccount

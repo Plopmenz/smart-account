@@ -8,10 +8,4 @@ contract SmartAccountOwnable is ISmartAccountOwnable {
     function owner() external view returns (address) {
         return SmartAccountOwnableLib.owner();
     }
-
-    /// @inheritdoc ISmartAccountOwnable
-    function transferOwnership(address newOwner) external {
-        SmartAccountOwnableLib.ensureIsOwner(msg.sender);
-        SmartAccountOwnableLib.setOwner(newOwner);
-    }
 }

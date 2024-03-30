@@ -1,20 +1,20 @@
 import { Address, DeployInfo, Deployer } from "../../web3webdeploy/types";
 
-export interface DeploySmartAccountSetupSettings
+export interface DeploySmartAccountBaseInstallerSettings
   extends Omit<DeployInfo, "contract" | "args"> {
   modules: Address;
   ownable: Address;
   erc165: Address;
 }
 
-export async function deploySmartAccountSetup(
+export async function deploySmartAccountBaseInstaller(
   deployer: Deployer,
-  settings: DeploySmartAccountSetupSettings
+  settings: DeploySmartAccountBaseInstallerSettings
 ): Promise<Address> {
   return await deployer
     .deploy({
-      id: "SmartAccountSetup",
-      contract: "SmartAccountSetup",
+      id: "SmartAccountBaseInstaller",
+      contract: "SmartAccountBaseInstaller",
       args: [settings.modules, settings.ownable, settings.erc165],
       ...settings,
     })

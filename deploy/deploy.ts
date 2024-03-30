@@ -13,29 +13,35 @@ import {
   deploySmartAccountOwnable,
 } from "./internal/SmartAccountOwnable";
 import {
-  DeploySmartAccountSetupSettings,
-  deploySmartAccountSetup,
-} from "./internal/SmartAccountSetup";
+  DeploySmartAccountBaseInstallerSettings,
+  deploySmartAccountBaseInstaller,
+} from "./internal/SmartAccountBaseInstaller";
+import {
+  DeploySmartAccountTrustlessExecutionSettings,
+  deploySmartAccountTrustlessExecution,
+} from "./internal/SmartAccountTrustlessExecution";
 
 export interface SmartAccountDeploymentSettings {
   modulesSettings: DeploySmartAccountModulesSettings;
   setupSettings: Omit<
-    DeploySmartAccountSetupSettings,
+    DeploySmartAccountBaseInstallerSettings,
     "modules" | "ownable" | "erc165" | "multicall"
   >;
 
   ownableSettings: DeploySmartAccountOwnableSettings;
   erc165Settings: DeploySmartAccountERC165Settings;
+  trustlessExecutionSettings: DeploySmartAccountTrustlessExecutionSettings;
 
   forceRedeploy?: boolean;
 }
 
 export interface SmartAccountDeployment {
   smartAccountModules: Address;
-  smartAccountSetup: Address;
+  smartAccountBaseInstaller: Address;
   modules: {
     ownable: Address;
     erc165: Address;
+    trustlessExecution: Address;
   };
 }
 
@@ -65,20 +71,35 @@ export async function deploy(
     deployer,
     settings?.erc165Settings ?? {}
   );
+  const trustlessExecution = await deploySmartAccountTrustlessExecution(
+    deployer,
+    settings?.trustlessExecutionSettings ?? {}
+  );
 
-  const smartAccountSetup = await deploySmartAccountSetup(deployer, {
-    modules: smartAccountModules,
-    ownable: ownable,
-    erc165: erc165,
-    ...(settings?.setupSettings ?? {}),
-  });
+  const smartAccountBaseInstaller = await deploySmartAccountBaseInstaller(
+    deployer,
+    {
+      modules: smartAccountModules,
+      ownable: ownable,
+      erc165: erc165,
+      ...(settings?.setupSettings ?? {}),
+    }
+  );
+
+  // Example deployment:
+  // await deploySmartAccount(deployer, {
+  //   id: "MySmartAccount",
+  //   baseInstaller: smartAccountBaseInstaller,
+  //   owner: deployer.settings.defaultFrom,
+  // });
 
   const deployment = {
     smartAccountModules: smartAccountModules,
-    smartAccountSetup: smartAccountSetup,
+    smartAccountBaseInstaller: smartAccountBaseInstaller,
     modules: {
       ownable: ownable,
       erc165: erc165,
+      trustlessExecution: trustlessExecution,
     },
   };
   await deployer.saveDeployment({
