@@ -33,6 +33,6 @@ contract CallCounter {
         if (msg.sender != s.expectedCaller) {
             revert NotExpectedCaller();
         }
-        ++s.called;
+        s.called += 1;
     }
 }

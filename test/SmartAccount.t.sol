@@ -42,7 +42,7 @@ contract SmartAccountTest is Test {
         smartAccount.performDelegateCall(
             address(installer), abi.encodeWithSelector(installer.setModule.selector, functionSelector, module)
         );
-        assert(smartAccount.getModule(functionSelector) == module); // assertEq gives "unknown selector for VmCalls" error
+        assertEq(smartAccount.getModule(functionSelector), module);
     }
 
     function test_ownable(address owner) external {
@@ -51,7 +51,7 @@ contract SmartAccountTest is Test {
         smartAccount.performDelegateCall(
             address(installer), abi.encodeWithSelector(installer.transferOwnership.selector, owner)
         );
-        assert(smartAccount.owner() == owner); // assertEq gives "unknown selector for VmCalls" error
+        assertEq(smartAccount.owner(), owner);
     }
 
     function test_interfaces() external view {
@@ -65,7 +65,7 @@ contract SmartAccountTest is Test {
     }
 
     function test_multicall(uint8 calls) external {
-        uint256 EXTRA_CALLS = 2;
+        uint256 EXTRA_CALLS = 1;
         vm.assume(calls <= 255 - EXTRA_CALLS); // max of 255 actions
         CallCounter callCounter = new CallCounter();
         bytes[] memory multicall = new bytes[](calls + EXTRA_CALLS);
@@ -79,18 +79,14 @@ contract SmartAccountTest is Test {
             address(callCounter),
             abi.encodeWithSelector(callCounter.countCall.selector)
         );
-        for (uint256 i = 1; i < multicall.length - 1; i++) {
+        for (uint256 i = EXTRA_CALLS; i < multicall.length; i++) {
             multicall[i] = countCall;
         }
-        multicall[multicall.length - 1] = abi.encodeWithSelector(
-            smartAccount.performDelegateCall.selector,
-            address(callCounter),
-            abi.encodeWithSelector(callCounter.totalCalls.selector)
-        );
-        // bytes[] memory results =
         smartAccount.multicall(multicall);
-        // counterCalls has an unexpected value
-        // (uint256 countedCalls) = abi.decode(results[multicall.length - 1], (uint256));
-        // assert(countedCalls == calls);
+        bytes memory result = smartAccount.performDelegateCall(
+            address(callCounter), abi.encodeWithSelector(callCounter.totalCalls.selector)
+        );
+        (uint256 countedCalls) = abi.decode(result, (uint256));
+        assertEq(countedCalls, calls);
     }
 }
