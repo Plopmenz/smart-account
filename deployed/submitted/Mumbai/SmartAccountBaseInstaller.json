@@ -1,0 +1,240 @@
+{
+  "type": "deployment",
+  "id": "SmartAccountBaseInstaller",
+  "batch": "Mumbai",
+  "batchIndex": 4,
+  "deploymentAddress": "0x4811864B715C0F1B0f9790a8ee6F11dC25b7F258",
+  "constructorArgs": [
+    "0xdF19f5Fcd5F8F1bd3C387422FC65109F5117F990",
+    "0x2F3Cec4e1ACF883adD5A426c56789242612c2F39",
+    "0xCa9FE66b1b6903c41e1A61eE20582bf48137765E"
+  ],
+  "to": "0x4e59b44847b379578588920ca78fbf26c0b4956c",
+  "value": "0",
+  "data": "0x000000000000000000000000000000000000000000000000706c6f706d656e7a60e0346100b657601f61072e38819003918201601f19168301916001600160401b038311848410176100ba578084926060946040528339810103126100b65780516001600160a01b03919082811681036100b65760208201519183831683036100b6576040015192831683036100b65760805260a05260c05260405161065f90816100cf823960805181818160ae0152610265015260a05181818161031d01526103da015260c05181818161019f01526103820152f35b5f80fd5b634e487b7160e01b5f52604160045260245ffdfe608060408181526004361015610013575f80fd5b5f3560e01c9182630d638f30146104095750816319fae326146103c75781632a1b8f9b146101ce57816383fd8d191461018c578163bf1eeb6b146100dd578163c2d2a3e71461009b575063f2fde38b1461006b575f80fd5b3461009757602036600319011261009757610095610087610550565b61009033610566565b6105be565b005b5f80fd5b34610097575f36600319011261009757517f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03168152602090f35b346100975780600319360112610097576004359063ffffffff60e01b8216809203610097576024356001600160a01b0381169290839003610097577f0e1b22cdaccd652db85cbcd4ee8f705beabfaa30664122ccc544137ef20749bb9261014333610566565b815f527f56a2f102f06100e6e9193cce9cca60c6a83719df4146213240bdd4963e5931ba602052825f20816001600160601b0360a01b82541617905582519182526020820152a1005b34610097575f36600319011261009757517f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03168152602090f35b34610097576020806003193601126100975781906101ea610550565b631756af8f60e01b91825f527f1164ff701c332a936c6fdd0cee9b71313a2f7a4aebd6e4eb4e5f25a54a3bd7d792838252845f20928260019260ff1995848782541617905587518481527f0ec03a921b5deb73a9948473b4744dde91adeb598eacc1fca09623171feafb3e928391a28360018060a01b0393847f0000000000000000000000000000000000000000000000000000000000000000169663dcef006960e01b98895f527f56a2f102f06100e6e9193cce9cca60c6a83719df4146213240bdd4963e5931ba998a85528b5f20996001600160601b0360a01b9a818c8254161790558c5190828252868201527f0e1b22cdaccd652db85cbcd4ee8f705beabfaa30664122ccc544137ef20749bb9d8e91a1805f528185528b5f20848482541617905585858d51868152a2610343877f000000000000000000000000000000000000000000000000000000000000000016966105be565b8b8b638da5cb5b60e01b97885f528c8752815f20818d82541617905581519089825287820152a1855f528352818a5f20918254161790558851908152a27f000000000000000000000000000000000000000000000000000000000000000016916301ffc9a760e01b93845f52825282855f20918254161790558351928352820152a1005b34610097575f36600319011261009757517f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03168152602090f35b34610097575f3660031901126100975781905f63dcef006960e01b8082527f56a2f102f06100e6e9193cce9cca60c6a83719df4146213240bdd4963e5931ba92602091848352858420916001600160601b0360a01b9283815416905581815284848201527f0e1b22cdaccd652db85cbcd4ee8f705beabfaa30664122ccc544137ef20749bb978891a1808452827f1164ff701c332a936c6fdd0cee9b71313a2f7a4aebd6e4eb4e5f25a54a3bd7d7918282528786209060ff199182815416905588518781527f0ec03a921b5deb73a9948473b4744dde91adeb598eacc1fca09623171feafb3e938491a2638da5cb5b60e01b92838752878652888720858154169055898980518681528989820152a18387528552878620908154169055838751868152a26301ffc9a760e01b808452938252848320805490911690558351928352820152a1005b600435906001600160a01b038216820361009757565b7f7da6c9ab90b7db6fcaf21a446db7bbaed4e66d04f1d85c8b0a55dc8af596b030546001600160a01b0391821691168082036105a0575050565b6044925060405191631194af8760e11b835260048301526024820152fd5b7f7da6c9ab90b7db6fcaf21a446db7bbaed4e66d04f1d85c8b0a55dc8af596b03080546001600160a01b0319166001600160a01b0390921691821790556040519081527f3edd90e7770f06fafde38004653b33870066c33bfc923ff6102acd601f85dfbc90602090a156fea2646970667358221220a492247df41690796a100ffdce30c03683ff3f67199b78122a6904823e63860f64736f6c63430008170033000000000000000000000000df19f5fcd5f8f1bd3c387422fc65109f5117f9900000000000000000000000002f3cec4e1acf883add5a426c56789242612c2f39000000000000000000000000ca9fe66b1b6903c41e1a61ee20582bf48137765e",
+  "gas": "413992",
+  "from": "0x519ce4C129a981B2CBB4C3990B1391dA24E8EbF3",
+  "transactionSettings": {
+    "chainId": 80001,
+    "nonce": "4",
+    "baseFee": "60482557466",
+    "priorityFee": "1000000000"
+  },
+  "salt": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000plopmenz",
+  "artifact": {
+    "abi": [
+      {
+        "type": "constructor",
+        "inputs": [
+          {
+            "name": "smartAccountModules",
+            "type": "address",
+            "internalType": "contract ISmartAccountModules"
+          },
+          {
+            "name": "smartAccountOwnable",
+            "type": "address",
+            "internalType": "contract ISmartAccountOwnable"
+          },
+          {
+            "name": "smartAccountERC165",
+            "type": "address",
+            "internalType": "contract ISmartAccountERC165"
+          }
+        ],
+        "stateMutability": "nonpayable"
+      },
+      {
+        "type": "function",
+        "name": "SMART_ACCOUNT_ERC165",
+        "inputs": [],
+        "outputs": [
+          {
+            "name": "",
+            "type": "address",
+            "internalType": "contract ISmartAccountERC165"
+          }
+        ],
+        "stateMutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "SMART_ACCOUNT_MODULES",
+        "inputs": [],
+        "outputs": [
+          {
+            "name": "",
+            "type": "address",
+            "internalType": "contract ISmartAccountModules"
+          }
+        ],
+        "stateMutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "SMART_ACCOUNT_OWNABLE",
+        "inputs": [],
+        "outputs": [
+          {
+            "name": "",
+            "type": "address",
+            "internalType": "contract ISmartAccountOwnable"
+          }
+        ],
+        "stateMutability": "view"
+      },
+      {
+        "type": "function",
+        "name": "install",
+        "inputs": [
+          { "name": "owner", "type": "address", "internalType": "address" }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+      },
+      {
+        "type": "function",
+        "name": "setModule",
+        "inputs": [
+          {
+            "name": "functionSelector",
+            "type": "bytes4",
+            "internalType": "bytes4"
+          },
+          { "name": "module", "type": "address", "internalType": "address" }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+      },
+      {
+        "type": "function",
+        "name": "transferOwnership",
+        "inputs": [
+          { "name": "newOwner", "type": "address", "internalType": "address" }
+        ],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+      },
+      {
+        "type": "function",
+        "name": "uninstall",
+        "inputs": [],
+        "outputs": [],
+        "stateMutability": "nonpayable"
+      },
+      {
+        "type": "event",
+        "name": "InterfaceSupportedChanged",
+        "inputs": [
+          {
+            "name": "interfaceId",
+            "type": "bytes4",
+            "indexed": true,
+            "internalType": "bytes4"
+          },
+          {
+            "name": "supported",
+            "type": "bool",
+            "indexed": false,
+            "internalType": "bool"
+          }
+        ],
+        "anonymous": false
+      },
+      {
+        "type": "event",
+        "name": "ModuleSet",
+        "inputs": [
+          {
+            "name": "functionSelector",
+            "type": "bytes4",
+            "indexed": false,
+            "internalType": "bytes4"
+          },
+          {
+            "name": "module",
+            "type": "address",
+            "indexed": false,
+            "internalType": "address"
+          }
+        ],
+        "anonymous": false
+      },
+      {
+        "type": "event",
+        "name": "NewOwner",
+        "inputs": [
+          {
+            "name": "account",
+            "type": "address",
+            "indexed": false,
+            "internalType": "address"
+          }
+        ],
+        "anonymous": false
+      },
+      {
+        "type": "error",
+        "name": "NotOwner",
+        "inputs": [
+          { "name": "account", "type": "address", "internalType": "address" },
+          { "name": "owner", "type": "address", "internalType": "address" }
+        ]
+      }
+    ],
+    "bytecode": "0x60e0346100b657601f61072e38819003918201601f19168301916001600160401b038311848410176100ba578084926060946040528339810103126100b65780516001600160a01b03919082811681036100b65760208201519183831683036100b6576040015192831683036100b65760805260a05260c05260405161065f90816100cf823960805181818160ae0152610265015260a05181818161031d01526103da015260c05181818161019f01526103820152f35b5f80fd5b634e487b7160e01b5f52604160045260245ffdfe608060408181526004361015610013575f80fd5b5f3560e01c9182630d638f30146104095750816319fae326146103c75781632a1b8f9b146101ce57816383fd8d191461018c578163bf1eeb6b146100dd578163c2d2a3e71461009b575063f2fde38b1461006b575f80fd5b3461009757602036600319011261009757610095610087610550565b61009033610566565b6105be565b005b5f80fd5b34610097575f36600319011261009757517f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03168152602090f35b346100975780600319360112610097576004359063ffffffff60e01b8216809203610097576024356001600160a01b0381169290839003610097577f0e1b22cdaccd652db85cbcd4ee8f705beabfaa30664122ccc544137ef20749bb9261014333610566565b815f527f56a2f102f06100e6e9193cce9cca60c6a83719df4146213240bdd4963e5931ba602052825f20816001600160601b0360a01b82541617905582519182526020820152a1005b34610097575f36600319011261009757517f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03168152602090f35b34610097576020806003193601126100975781906101ea610550565b631756af8f60e01b91825f527f1164ff701c332a936c6fdd0cee9b71313a2f7a4aebd6e4eb4e5f25a54a3bd7d792838252845f20928260019260ff1995848782541617905587518481527f0ec03a921b5deb73a9948473b4744dde91adeb598eacc1fca09623171feafb3e928391a28360018060a01b0393847f0000000000000000000000000000000000000000000000000000000000000000169663dcef006960e01b98895f527f56a2f102f06100e6e9193cce9cca60c6a83719df4146213240bdd4963e5931ba998a85528b5f20996001600160601b0360a01b9a818c8254161790558c5190828252868201527f0e1b22cdaccd652db85cbcd4ee8f705beabfaa30664122ccc544137ef20749bb9d8e91a1805f528185528b5f20848482541617905585858d51868152a2610343877f000000000000000000000000000000000000000000000000000000000000000016966105be565b8b8b638da5cb5b60e01b97885f528c8752815f20818d82541617905581519089825287820152a1855f528352818a5f20918254161790558851908152a27f000000000000000000000000000000000000000000000000000000000000000016916301ffc9a760e01b93845f52825282855f20918254161790558351928352820152a1005b34610097575f36600319011261009757517f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03168152602090f35b34610097575f3660031901126100975781905f63dcef006960e01b8082527f56a2f102f06100e6e9193cce9cca60c6a83719df4146213240bdd4963e5931ba92602091848352858420916001600160601b0360a01b9283815416905581815284848201527f0e1b22cdaccd652db85cbcd4ee8f705beabfaa30664122ccc544137ef20749bb978891a1808452827f1164ff701c332a936c6fdd0cee9b71313a2f7a4aebd6e4eb4e5f25a54a3bd7d7918282528786209060ff199182815416905588518781527f0ec03a921b5deb73a9948473b4744dde91adeb598eacc1fca09623171feafb3e938491a2638da5cb5b60e01b92838752878652888720858154169055898980518681528989820152a18387528552878620908154169055838751868152a26301ffc9a760e01b808452938252848320805490911690558351928352820152a1005b600435906001600160a01b038216820361009757565b7f7da6c9ab90b7db6fcaf21a446db7bbaed4e66d04f1d85c8b0a55dc8af596b030546001600160a01b0391821691168082036105a0575050565b6044925060405191631194af8760e11b835260048301526024820152fd5b7f7da6c9ab90b7db6fcaf21a446db7bbaed4e66d04f1d85c8b0a55dc8af596b03080546001600160a01b0319166001600160a01b0390921691821790556040519081527f3edd90e7770f06fafde38004653b33870066c33bfc923ff6102acd601f85dfbc90602090a156fea2646970667358221220a492247df41690796a100ffdce30c03683ff3f67199b78122a6904823e63860f64736f6c63430008170033",
+    "compiler": { "version": "v0.8.23+commit.f704f362" },
+    "contractName": "src/SmartAccountBaseInstaller.sol:SmartAccountBaseInstaller",
+    "jsonDescription": {
+      "language": "Solidity",
+      "sources": {
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol": {
+          "content": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v5.0.0) (utils/introspection/IERC165.sol)\n\npragma solidity ^0.8.20;\n\n/**\n * @dev Interface of the ERC165 standard, as defined in the\n * https://eips.ethereum.org/EIPS/eip-165[EIP].\n *\n * Implementers can declare support of contract interfaces, which can then be\n * queried by others ({ERC165Checker}).\n *\n * For an implementation, see {ERC165}.\n */\ninterface IERC165 {\n    /**\n     * @dev Returns true if this contract implements the interface defined by\n     * `interfaceId`. See the corresponding\n     * https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section]\n     * to learn more about how these ids are created.\n     *\n     * This function call must use less than 30 000 gas.\n     */\n    function supportsInterface(bytes4 interfaceId) external view returns (bool);\n}\n"
+        },
+        "src/ISmartAccount.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ninterface ISmartAccount {\n    /// @notice Executes an arbitrary blockchain call.\n    function performCall(address to, uint256 value, bytes calldata data) external returns (bytes memory returnValue);\n\n    /// @notice Executes an arbitrary blockchain call with delegateCall. This allows advanced code execution inside the account itself.\n    function performDelegateCall(address to, bytes calldata data) external returns (bytes memory returnValue);\n\n    /// @notice Receives and executes a batch of function calls on this contract.\n    function multicall(bytes[] calldata data) external returns (bytes[] memory results);\n}\n"
+        },
+        "src/SmartAccountBaseInstaller.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {ISmartAccount} from \"./ISmartAccount.sol\";\nimport {SmartAccountModulesLib, ISmartAccountModules} from \"./modules/SmartAccountModulesLib.sol\";\n\nimport {SmartAccountOwnableLib, ISmartAccountOwnable} from \"./modules/ownable/SmartAccountOwnableLib.sol\";\nimport {SmartAccountERC165Lib, ISmartAccountERC165} from \"./modules/erc165/SmartAccountERC165Lib.sol\";\n\ninterface ISmartAccountBase is ISmartAccount, ISmartAccountModules, ISmartAccountOwnable, ISmartAccountERC165 {}\n\ncontract SmartAccountBaseInstaller {\n    ISmartAccountModules public immutable SMART_ACCOUNT_MODULES;\n    ISmartAccountOwnable public immutable SMART_ACCOUNT_OWNABLE;\n    ISmartAccountERC165 public immutable SMART_ACCOUNT_ERC165;\n\n    constructor(\n        ISmartAccountModules smartAccountModules,\n        ISmartAccountOwnable smartAccountOwnable,\n        ISmartAccountERC165 smartAccountERC165\n    ) {\n        SMART_ACCOUNT_MODULES = smartAccountModules;\n        SMART_ACCOUNT_OWNABLE = smartAccountOwnable;\n        SMART_ACCOUNT_ERC165 = smartAccountERC165;\n    }\n\n    /// @notice Installs the base modules into a smart account.\n    /// @param owner The initial owner of the smart account.\n    function install(address owner) public virtual {\n        SmartAccountERC165Lib.setInterfaceSupport(type(ISmartAccount).interfaceId, true);\n        SmartAccountModulesLib.fullInstall(address(SMART_ACCOUNT_MODULES));\n        SmartAccountOwnableLib.fullInstall(address(SMART_ACCOUNT_OWNABLE), owner);\n        SmartAccountERC165Lib.fullInstall(address(SMART_ACCOUNT_ERC165));\n    }\n\n    /// @notice Uninstalls the base modules of a smart account.\n    /// @dev This will not remove any storage (except interfaces). This means that owner stays active for the base smart account functionality. Any uninstalled modules will also stay active (even though the module manager is uninstalled).\n    function uninstall() public virtual {\n        SmartAccountModulesLib.fullUninstall();\n        SmartAccountOwnableLib.fullUninstall();\n        SmartAccountERC165Lib.fullUninstall();\n    }\n\n    /// @notice Set the currently registered module for function.\n    /// @param functionSelector Function of the module to register.\n    /// @param module Address of the module to forward the call to.\n    /// @dev Set to zero address to remove.\n    /// @dev Will override any existing module registered for this function without warning.\n    /// @dev In case of an uninstall of a module containing this function, the function will be removed, no matter if the uninstalled module is the current module for this function.\n    function setModule(bytes4 functionSelector, address module) external {\n        SmartAccountOwnableLib.ensureIsOwner(msg.sender);\n        SmartAccountModulesLib.setModule(functionSelector, module);\n    }\n\n    //// @notice Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\n    function transferOwnership(address newOwner) external {\n        SmartAccountOwnableLib.ensureIsOwner(msg.sender);\n        SmartAccountOwnableLib.setOwner(newOwner);\n    }\n}\n"
+        },
+        "src/modules/ISmartAccountModules.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ninterface ISmartAccountModules {\n    /// @notice When no function exists for function called\n    error FunctionNotFound(bytes4 functionSelector);\n\n    /// @notice Module is added/updated/removed.\n    event ModuleSet(bytes4 functionSelector, address module);\n\n    /// @notice Set the currently registered module for function.\n    /// @dev Zero address means no module is registered.\n    function getModule(bytes4 functionSelector) external view returns (address module);\n}\n"
+        },
+        "src/modules/SmartAccountModulesLib.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {SmartAccountERC165Lib} from \"./erc165/SmartAccountERC165Lib.sol\";\n\nimport {ISmartAccountModules} from \"./ISmartAccountModules.sol\";\n\n// Inspired by ERC-2535\nlibrary SmartAccountModulesLib {\n    bytes32 constant STORAGE_POSITION = keccak256(\"modules.smartaccount.plopmenz\");\n\n    struct Storage {\n        mapping(bytes4 functionSelector => address module) getFunction;\n    }\n\n    function getStorage() internal pure returns (Storage storage s) {\n        bytes32 position = STORAGE_POSITION;\n        assembly {\n            s.slot := position\n        }\n    }\n\n    /// @notice Sets the interfaces implemented by this contract to (un)supported.\n    function setInterfaces(bool supported) internal {\n        SmartAccountERC165Lib.setInterfaceSupport(type(ISmartAccountModules).interfaceId, supported);\n    }\n\n    /// @notice Installs all functions, interfaces, and performs storage initialization of this module.\n    function fullInstall(address module) internal {\n        setModule(ISmartAccountModules.getModule.selector, module);\n        setInterfaces(true);\n    }\n\n    /// @notice Uninstalls all functions and interfaces of this module.\n    function fullUninstall() internal {\n        setModule(ISmartAccountModules.getModule.selector, address(0));\n        setInterfaces(false);\n    }\n\n    /// @notice Get the currently registered module for function.\n    function getModule(bytes4 functionSelector) internal view returns (address module) {\n        return getStorage().getFunction[functionSelector];\n    }\n\n    /// @notice Set the currently registered module for function.\n    /// @dev Set to zero address to remove.\n    function setModule(bytes4 functionSelector, address module) internal {\n        getStorage().getFunction[functionSelector] = module;\n        emit ISmartAccountModules.ModuleSet(functionSelector, module);\n    }\n\n    /// @notice Delegates the current msg call to a module, if one is registered for that function.\n    function callModule() internal {\n        // Get module from function selector\n        address module = getModule(msg.sig);\n        if (module == address(0)) {\n            revert ISmartAccountModules.FunctionNotFound(msg.sig);\n        }\n        // Execute external function from module using delegatecall and return any value.\n        assembly {\n            // Copy function selector and any arguments\n            calldatacopy(0, 0, calldatasize())\n            // Execute function call using the module\n            let result := delegatecall(gas(), module, 0, calldatasize(), 0, 0)\n            // Get any return value\n            returndatacopy(0, 0, returndatasize())\n            // Return any return value or error back to the caller\n            switch result\n            case 0 { revert(0, returndatasize()) }\n            default { return(0, returndatasize()) }\n        }\n    }\n}\n"
+        },
+        "src/modules/erc165/ISmartAccountERC165.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {IERC165} from \"../../../lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol\";\n\ninterface ISmartAccountERC165 is IERC165 {\n    /// @notice Interface support changed.\n    event InterfaceSupportedChanged(bytes4 indexed interfaceId, bool supported);\n}\n"
+        },
+        "src/modules/erc165/SmartAccountERC165Lib.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {SmartAccountModulesLib} from \"../SmartAccountModulesLib.sol\";\n\nimport {ISmartAccountERC165, IERC165} from \"./ISmartAccountERC165.sol\";\n\nlibrary SmartAccountERC165Lib {\n    bytes32 constant STORAGE_POSITION = keccak256(\"erc165.modules.smartaccount.plopmenz\");\n\n    struct Storage {\n        mapping(bytes4 interfaceId => bool supported) getSupported;\n    }\n\n    function getStorage() internal pure returns (Storage storage s) {\n        bytes32 position = STORAGE_POSITION;\n        assembly {\n            s.slot := position\n        }\n    }\n\n    /// @notice Installs all functions, interfaces, and performs storage initialization of this module.\n    function fullInstall(address module) internal {\n        SmartAccountModulesLib.setModule(IERC165.supportsInterface.selector, module);\n    }\n\n    /// @notice Uninstalls all functions and interfaces of this module.\n    function fullUninstall() internal {\n        SmartAccountModulesLib.setModule(IERC165.supportsInterface.selector, address(0));\n    }\n\n    /// @notice Gets the interfaces supported by the Smart Account.\n    function supportsInterface(bytes4 interfaceId) internal view returns (bool supported) {\n        return getStorage().getSupported[interfaceId];\n    }\n\n    /// @notice Updates the interfaces supported by the Smart Account.\n    function setInterfaceSupport(bytes4 interfaceId, bool supported) internal {\n        getStorage().getSupported[interfaceId] = supported;\n        emit ISmartAccountERC165.InterfaceSupportedChanged(interfaceId, supported);\n    }\n}\n"
+        },
+        "src/modules/ownable/ISmartAccountOwnable.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ninterface ISmartAccountOwnable {\n    /// @notice The caller account is not authorized to perform an operation.\n    error NotOwner(address account, address owner);\n\n    /// @notice A (new) account has become the owner of this contract.\n    event NewOwner(address account);\n\n    /// @notice Returns the address of the current owner.\n    function owner() external view returns (address);\n}\n"
+        },
+        "src/modules/ownable/SmartAccountOwnableLib.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {SmartAccountERC165Lib} from \"../erc165/SmartAccountERC165Lib.sol\";\nimport {SmartAccountModulesLib} from \"../SmartAccountModulesLib.sol\";\n\nimport {ISmartAccountOwnable} from \"./ISmartAccountOwnable.sol\";\n\nlibrary SmartAccountOwnableLib {\n    bytes32 constant STORAGE_POSITION = keccak256(\"ownable.modules.smartaccount.plopmenz\");\n\n    struct Storage {\n        address owner;\n    }\n\n    function getStorage() internal pure returns (Storage storage s) {\n        bytes32 position = STORAGE_POSITION;\n        assembly {\n            s.slot := position\n        }\n    }\n\n    /// @notice Sets the interfaces implemented by this contract to (un)supported.\n    function setInterfaces(bool supported) internal {\n        SmartAccountERC165Lib.setInterfaceSupport(type(ISmartAccountOwnable).interfaceId, supported);\n    }\n\n    /// @notice Installs all functions, interfaces, and performs storage initialization of this module.\n    function fullInstall(address module, address initialOwner) internal {\n        SmartAccountOwnableLib.setOwner(initialOwner);\n        SmartAccountModulesLib.setModule(ISmartAccountOwnable.owner.selector, module);\n        setInterfaces(true);\n    }\n\n    /// @notice Uninstalls all functions and interfaces of this module.\n    function fullUninstall() internal {\n        SmartAccountModulesLib.setModule(ISmartAccountOwnable.owner.selector, address(0));\n        setInterfaces(false);\n    }\n\n    /// @notice Returns the address of the current owner.\n    function owner() internal view returns (address) {\n        return getStorage().owner;\n    }\n\n    /// @notice Reverts if `account` is not the current owner.\n    function ensureIsOwner(address account) internal view {\n        if (account != owner()) {\n            revert ISmartAccountOwnable.NotOwner(account, owner());\n        }\n    }\n\n    /// @notice Sets the address of the current owner.\n    function setOwner(address account) internal {\n        getStorage().owner = account;\n        emit ISmartAccountOwnable.NewOwner(account);\n    }\n}\n"
+        }
+      },
+      "settings": {
+        "remappings": [
+          "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+          "ds-test/=lib/openzeppelin-contracts/lib/forge-std/lib/ds-test/src/",
+          "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+          "forge-std/=lib/forge-std/src/",
+          "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+        ],
+        "optimizer": { "enabled": true, "runs": 200 },
+        "evmVersion": "shanghai",
+        "viaIR": true
+      },
+      "metadata": { "useLiteralContent": true }
+    },
+    "license": "MIT"
+  },
+  "source": "/home/plopmenz/smart-account",
+  "submitted": {
+    "transactionHash": "0x236aedad6011c3a8fc800b7d44af0e5afe7a97ecdd492142cacfa45293cee840",
+    "date": "2024-03-31T15:16:45.295Z"
+  }
+}

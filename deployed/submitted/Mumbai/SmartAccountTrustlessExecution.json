@@ -1,0 +1,189 @@
+{
+  "type": "deployment",
+  "id": "SmartAccountTrustlessExecution",
+  "batch": "Mumbai",
+  "batchIndex": 3,
+  "deploymentAddress": "0x9478eaab9F531533487c220C451820c3c7901e6b",
+  "constructorArgs": [],
+  "to": "0x4e59b44847b379578588920ca78fbf26c0b4956c",
+  "value": "0",
+  "data": "0x000000000000000000000000000000000000000000000000706c6f706d656e7a6080806040523461001657610579908161001b8239f35b5f80fdfe6080806040526004361015610012575f80fd5b5f3560e01c63c71bf32414610025575f80fd5b346102725760603660031901126102725767ffffffffffffffff60243511610272573660236024350112156102725767ffffffffffffffff60243560040135116102725736602480356004013560051b8135010111610272575f90335f527f6773380c68a4f1b5fc0767331b3f78df01c93053a8577bbdc258bc2fa4d79a4a60205260ff60405f205416156104215750610100602435600401351161040f576100db6100d6602435600401356104e1565b6104bb565b60046024350135808252601f19906100f2906104e1565b015f5b8181106103fe5750505f5b60243560040135811061027657506040519160a08301600435845260a0602085015260243560040135905260c0830160c06024356004013560051b850101906024803501905f5b6024356004013581106101bf575050507fd4e57c2049f004fb297ef78591cd409503ceb6b2c722d7ffed032fc99e5f3b586101b594604435604082015283606082015280830360808201528061019e339487610436565b0390a2604051928392604084526040840190610436565b9060208301520390f35b90919260bf1987820301835283356082196024353603018112156102725760243501602481013560018060a01b038116809103610272578252604481013560208301526064810135604219823603018112156102725701906044602483013592019167ffffffffffffffff8111610272578036038313610272576001928260209392606060408695015280606083015280608093848401375f828201840152601f01601f19160101950193019101610147565b5f80fd5b5a61028c826024356004013560248035016104f9565b356001600160a01b03811681036102725760206102b4846024356004013560248035016104f9565b0135906102cc846024356004013560248035016104f9565b604081013590601e198136030182121561027257019081359167ffffffffffffffff831161027257602001918036038313610272575f938493826040519384928337810185815203925af13d156103f6573d9167ffffffffffffffff83116103e257610341601f8401601f19166020016104bb565b9283523d5f602085013e5b5a90604435600160ff87161b1661039e5750501561038557906001915b610373828561052f565b5261037e818461052f565b5001610100565b60405163a6a7dbbd60e01b815260048101839052602490fd5b9091156103b1575b505090600191610369565b6006959392951c116103d0576001918260ff83161b189390915f6103a6565b6040516307099c5360e21b8152600490fd5b634e487b7160e01b5f52604160045260245ffd5b60609161034c565b8060606020809386010152016100f5565b6040516308e3b1eb60e11b8152600490fd5b63d36e0fe760e01b8152336004820152602490fd5b9080825180825260208092019180808360051b8601019501935f905b8382106104625750505050505090565b90919293949583601f198084840301885288518051908185525f5b8281106104a75750505f818501840152601f01169091018101968101950193929160010190610452565b81810185015186820186015288940161047d565b6040519190601f01601f1916820167ffffffffffffffff8111838210176103e257604052565b67ffffffffffffffff81116103e25760051b60200190565b919081101561051b5760051b81013590605e1981360301821215610272570190565b634e487b7160e01b5f52603260045260245ffd5b805182101561051b5760209160051b01019056fea264697066735822122019f526d0c552c81ec9e965635992df650b6a9db23d4babd7784ea92577a3e2a764736f6c63430008170033",
+  "gas": "361575",
+  "from": "0x519ce4C129a981B2CBB4C3990B1391dA24E8EbF3",
+  "transactionSettings": {
+    "chainId": 80001,
+    "nonce": "3",
+    "baseFee": "60482557466",
+    "priorityFee": "1000000000"
+  },
+  "salt": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000plopmenz",
+  "artifact": {
+    "abi": [
+      {
+        "type": "function",
+        "name": "execute",
+        "inputs": [
+          { "name": "_callId", "type": "bytes32", "internalType": "bytes32" },
+          {
+            "name": "_actions",
+            "type": "tuple[]",
+            "internalType": "struct ISmartAccountTrustlessExecution.Action[]",
+            "components": [
+              { "name": "to", "type": "address", "internalType": "address" },
+              { "name": "value", "type": "uint256", "internalType": "uint256" },
+              { "name": "data", "type": "bytes", "internalType": "bytes" }
+            ]
+          },
+          {
+            "name": "_allowFailureMap",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "execResults",
+            "type": "bytes[]",
+            "internalType": "bytes[]"
+          },
+          { "name": "failureMap", "type": "uint256", "internalType": "uint256" }
+        ],
+        "stateMutability": "nonpayable"
+      },
+      {
+        "type": "event",
+        "name": "ExecutePermissionSet",
+        "inputs": [
+          {
+            "name": "account",
+            "type": "address",
+            "indexed": false,
+            "internalType": "address"
+          },
+          {
+            "name": "allowed",
+            "type": "bool",
+            "indexed": false,
+            "internalType": "bool"
+          }
+        ],
+        "anonymous": false
+      },
+      {
+        "type": "event",
+        "name": "Executed",
+        "inputs": [
+          {
+            "name": "actor",
+            "type": "address",
+            "indexed": true,
+            "internalType": "address"
+          },
+          {
+            "name": "callId",
+            "type": "bytes32",
+            "indexed": false,
+            "internalType": "bytes32"
+          },
+          {
+            "name": "actions",
+            "type": "tuple[]",
+            "indexed": false,
+            "internalType": "struct ISmartAccountTrustlessExecution.Action[]",
+            "components": [
+              { "name": "to", "type": "address", "internalType": "address" },
+              { "name": "value", "type": "uint256", "internalType": "uint256" },
+              { "name": "data", "type": "bytes", "internalType": "bytes" }
+            ]
+          },
+          {
+            "name": "allowFailureMap",
+            "type": "uint256",
+            "indexed": false,
+            "internalType": "uint256"
+          },
+          {
+            "name": "failureMap",
+            "type": "uint256",
+            "indexed": false,
+            "internalType": "uint256"
+          },
+          {
+            "name": "execResults",
+            "type": "bytes[]",
+            "indexed": false,
+            "internalType": "bytes[]"
+          }
+        ],
+        "anonymous": false
+      },
+      {
+        "type": "error",
+        "name": "ActionFailed",
+        "inputs": [
+          { "name": "index", "type": "uint256", "internalType": "uint256" }
+        ]
+      },
+      { "type": "error", "name": "InsufficientGas", "inputs": [] },
+      {
+        "type": "error",
+        "name": "NoExecutePermission",
+        "inputs": [
+          { "name": "account", "type": "address", "internalType": "address" }
+        ]
+      },
+      { "type": "error", "name": "TooManyActions", "inputs": [] }
+    ],
+    "bytecode": "0x6080806040523461001657610579908161001b8239f35b5f80fdfe6080806040526004361015610012575f80fd5b5f3560e01c63c71bf32414610025575f80fd5b346102725760603660031901126102725767ffffffffffffffff60243511610272573660236024350112156102725767ffffffffffffffff60243560040135116102725736602480356004013560051b8135010111610272575f90335f527f6773380c68a4f1b5fc0767331b3f78df01c93053a8577bbdc258bc2fa4d79a4a60205260ff60405f205416156104215750610100602435600401351161040f576100db6100d6602435600401356104e1565b6104bb565b60046024350135808252601f19906100f2906104e1565b015f5b8181106103fe5750505f5b60243560040135811061027657506040519160a08301600435845260a0602085015260243560040135905260c0830160c06024356004013560051b850101906024803501905f5b6024356004013581106101bf575050507fd4e57c2049f004fb297ef78591cd409503ceb6b2c722d7ffed032fc99e5f3b586101b594604435604082015283606082015280830360808201528061019e339487610436565b0390a2604051928392604084526040840190610436565b9060208301520390f35b90919260bf1987820301835283356082196024353603018112156102725760243501602481013560018060a01b038116809103610272578252604481013560208301526064810135604219823603018112156102725701906044602483013592019167ffffffffffffffff8111610272578036038313610272576001928260209392606060408695015280606083015280608093848401375f828201840152601f01601f19160101950193019101610147565b5f80fd5b5a61028c826024356004013560248035016104f9565b356001600160a01b03811681036102725760206102b4846024356004013560248035016104f9565b0135906102cc846024356004013560248035016104f9565b604081013590601e198136030182121561027257019081359167ffffffffffffffff831161027257602001918036038313610272575f938493826040519384928337810185815203925af13d156103f6573d9167ffffffffffffffff83116103e257610341601f8401601f19166020016104bb565b9283523d5f602085013e5b5a90604435600160ff87161b1661039e5750501561038557906001915b610373828561052f565b5261037e818461052f565b5001610100565b60405163a6a7dbbd60e01b815260048101839052602490fd5b9091156103b1575b505090600191610369565b6006959392951c116103d0576001918260ff83161b189390915f6103a6565b6040516307099c5360e21b8152600490fd5b634e487b7160e01b5f52604160045260245ffd5b60609161034c565b8060606020809386010152016100f5565b6040516308e3b1eb60e11b8152600490fd5b63d36e0fe760e01b8152336004820152602490fd5b9080825180825260208092019180808360051b8601019501935f905b8382106104625750505050505090565b90919293949583601f198084840301885288518051908185525f5b8281106104a75750505f818501840152601f01169091018101968101950193929160010190610452565b81810185015186820186015288940161047d565b6040519190601f01601f1916820167ffffffffffffffff8111838210176103e257604052565b67ffffffffffffffff81116103e25760051b60200190565b919081101561051b5760051b81013590605e1981360301821215610272570190565b634e487b7160e01b5f52603260045260245ffd5b805182101561051b5760209160051b01019056fea264697066735822122019f526d0c552c81ec9e965635992df650b6a9db23d4babd7784ea92577a3e2a764736f6c63430008170033",
+    "compiler": { "version": "v0.8.23+commit.f704f362" },
+    "contractName": "src/modules/trustless-execution/SmartAccountTrustlessExecution.sol:SmartAccountTrustlessExecution",
+    "jsonDescription": {
+      "language": "Solidity",
+      "sources": {
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol": {
+          "content": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v5.0.0) (utils/introspection/IERC165.sol)\n\npragma solidity ^0.8.20;\n\n/**\n * @dev Interface of the ERC165 standard, as defined in the\n * https://eips.ethereum.org/EIPS/eip-165[EIP].\n *\n * Implementers can declare support of contract interfaces, which can then be\n * queried by others ({ERC165Checker}).\n *\n * For an implementation, see {ERC165}.\n */\ninterface IERC165 {\n    /**\n     * @dev Returns true if this contract implements the interface defined by\n     * `interfaceId`. See the corresponding\n     * https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section]\n     * to learn more about how these ids are created.\n     *\n     * This function call must use less than 30 000 gas.\n     */\n    function supportsInterface(bytes4 interfaceId) external view returns (bool);\n}\n"
+        },
+        "src/modules/ISmartAccountModules.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ninterface ISmartAccountModules {\n    /// @notice When no function exists for function called\n    error FunctionNotFound(bytes4 functionSelector);\n\n    /// @notice Module is added/updated/removed.\n    event ModuleSet(bytes4 functionSelector, address module);\n\n    /// @notice Set the currently registered module for function.\n    /// @dev Zero address means no module is registered.\n    function getModule(bytes4 functionSelector) external view returns (address module);\n}\n"
+        },
+        "src/modules/SmartAccountModulesLib.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {SmartAccountERC165Lib} from \"./erc165/SmartAccountERC165Lib.sol\";\n\nimport {ISmartAccountModules} from \"./ISmartAccountModules.sol\";\n\n// Inspired by ERC-2535\nlibrary SmartAccountModulesLib {\n    bytes32 constant STORAGE_POSITION = keccak256(\"modules.smartaccount.plopmenz\");\n\n    struct Storage {\n        mapping(bytes4 functionSelector => address module) getFunction;\n    }\n\n    function getStorage() internal pure returns (Storage storage s) {\n        bytes32 position = STORAGE_POSITION;\n        assembly {\n            s.slot := position\n        }\n    }\n\n    /// @notice Sets the interfaces implemented by this contract to (un)supported.\n    function setInterfaces(bool supported) internal {\n        SmartAccountERC165Lib.setInterfaceSupport(type(ISmartAccountModules).interfaceId, supported);\n    }\n\n    /// @notice Installs all functions, interfaces, and performs storage initialization of this module.\n    function fullInstall(address module) internal {\n        setModule(ISmartAccountModules.getModule.selector, module);\n        setInterfaces(true);\n    }\n\n    /// @notice Uninstalls all functions and interfaces of this module.\n    function fullUninstall() internal {\n        setModule(ISmartAccountModules.getModule.selector, address(0));\n        setInterfaces(false);\n    }\n\n    /// @notice Get the currently registered module for function.\n    function getModule(bytes4 functionSelector) internal view returns (address module) {\n        return getStorage().getFunction[functionSelector];\n    }\n\n    /// @notice Set the currently registered module for function.\n    /// @dev Set to zero address to remove.\n    function setModule(bytes4 functionSelector, address module) internal {\n        getStorage().getFunction[functionSelector] = module;\n        emit ISmartAccountModules.ModuleSet(functionSelector, module);\n    }\n\n    /// @notice Delegates the current msg call to a module, if one is registered for that function.\n    function callModule() internal {\n        // Get module from function selector\n        address module = getModule(msg.sig);\n        if (module == address(0)) {\n            revert ISmartAccountModules.FunctionNotFound(msg.sig);\n        }\n        // Execute external function from module using delegatecall and return any value.\n        assembly {\n            // Copy function selector and any arguments\n            calldatacopy(0, 0, calldatasize())\n            // Execute function call using the module\n            let result := delegatecall(gas(), module, 0, calldatasize(), 0, 0)\n            // Get any return value\n            returndatacopy(0, 0, returndatasize())\n            // Return any return value or error back to the caller\n            switch result\n            case 0 { revert(0, returndatasize()) }\n            default { return(0, returndatasize()) }\n        }\n    }\n}\n"
+        },
+        "src/modules/erc165/ISmartAccountERC165.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {IERC165} from \"../../../lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol\";\n\ninterface ISmartAccountERC165 is IERC165 {\n    /// @notice Interface support changed.\n    event InterfaceSupportedChanged(bytes4 indexed interfaceId, bool supported);\n}\n"
+        },
+        "src/modules/erc165/SmartAccountERC165Lib.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {SmartAccountModulesLib} from \"../SmartAccountModulesLib.sol\";\n\nimport {ISmartAccountERC165, IERC165} from \"./ISmartAccountERC165.sol\";\n\nlibrary SmartAccountERC165Lib {\n    bytes32 constant STORAGE_POSITION = keccak256(\"erc165.modules.smartaccount.plopmenz\");\n\n    struct Storage {\n        mapping(bytes4 interfaceId => bool supported) getSupported;\n    }\n\n    function getStorage() internal pure returns (Storage storage s) {\n        bytes32 position = STORAGE_POSITION;\n        assembly {\n            s.slot := position\n        }\n    }\n\n    /// @notice Installs all functions, interfaces, and performs storage initialization of this module.\n    function fullInstall(address module) internal {\n        SmartAccountModulesLib.setModule(IERC165.supportsInterface.selector, module);\n    }\n\n    /// @notice Uninstalls all functions and interfaces of this module.\n    function fullUninstall() internal {\n        SmartAccountModulesLib.setModule(IERC165.supportsInterface.selector, address(0));\n    }\n\n    /// @notice Gets the interfaces supported by the Smart Account.\n    function supportsInterface(bytes4 interfaceId) internal view returns (bool supported) {\n        return getStorage().getSupported[interfaceId];\n    }\n\n    /// @notice Updates the interfaces supported by the Smart Account.\n    function setInterfaceSupport(bytes4 interfaceId, bool supported) internal {\n        getStorage().getSupported[interfaceId] = supported;\n        emit ISmartAccountERC165.InterfaceSupportedChanged(interfaceId, supported);\n    }\n}\n"
+        },
+        "src/modules/trustless-execution/ISmartAccountTrustlessExecution.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ninterface ISmartAccountTrustlessExecution {\n    /// @notice The caller account is not authorized to perform an operation.\n    error NoExecutePermission(address account);\n\n    /// @notice Thrown if the action array length is larger than `MAX_ACTIONS`.\n    error TooManyActions();\n\n    /// @notice Thrown if action execution has failed.\n    /// @param index The index of the action in the action array that failed.\n    error ActionFailed(uint256 index);\n\n    /// @notice Thrown if an action has insufficent gas left.\n    error InsufficientGas();\n\n    /// @notice A (new) account has become the owner of this contract.\n    event ExecutePermissionSet(address account, bool allowed);\n\n    /// @notice Emitted when an execution is performed.\n    /// @param actor The address of the caller.\n    /// @param callId The ID of the call.\n    /// @param actions The array of actions executed.\n    /// @param allowFailureMap The allow failure map encoding which actions are allowed to fail.\n    /// @param failureMap The failure map encoding which actions have failed.\n    /// @param execResults The array with the results of the executed actions.\n    /// @dev The value of `callId` is defined by the component/contract calling the execute function. A `Plugin` implementation can use it, for example, as a nonce.\n    event Executed(\n        address indexed actor,\n        bytes32 callId,\n        Action[] actions,\n        uint256 allowFailureMap,\n        uint256 failureMap,\n        bytes[] execResults\n    );\n\n    /// @notice The action struct to be consumed by the DAO's `execute` function resulting in an external call.\n    /// @param to The address to call.\n    /// @param value The native token value to be sent with the call.\n    /// @param data The bytes-encoded function selector and calldata for the call.\n    struct Action {\n        address to;\n        uint256 value;\n        bytes data;\n    }\n\n    /// @notice Executes a list of actions. If a zero allow-failure map is provided, a failing action reverts the entire execution. If a non-zero allow-failure map is provided, allowed actions can fail without the entire call being reverted.\n    /// @param _callId The ID of the call. The definition of the value of `callId` is up to the calling contract and can be used, e.g., as a nonce.\n    /// @param _actions The array of actions.\n    /// @param _allowFailureMap A bitmap allowing execution to succeed, even if individual actions might revert. If the bit at index `i` is 1, the execution succeeds even if the `i`th action reverts. A failure map value of 0 requires every action to not revert.\n    /// @return execResults The array of results obtained from the executed actions in `bytes`.\n    /// @return failureMap The resulting failure map containing the actions have actually failed.\n    function execute(bytes32 _callId, Action[] memory _actions, uint256 _allowFailureMap)\n        external\n        returns (bytes[] memory execResults, uint256 failureMap);\n}\n"
+        },
+        "src/modules/trustless-execution/SmartAccountTrustlessExecution.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {\n    SmartAccountTrustlessExecutionLib, ISmartAccountTrustlessExecution\n} from \"./SmartAccountTrustlessExecutionLib.sol\";\n\ncontract SmartAccountTrustlessExecution is ISmartAccountTrustlessExecution {\n    /// @inheritdoc ISmartAccountTrustlessExecution\n    function execute(bytes32 _callId, Action[] calldata _actions, uint256 _allowFailureMap)\n        external\n        override\n        returns (bytes[] memory execResults, uint256 failureMap)\n    {\n        return SmartAccountTrustlessExecutionLib.execute(_callId, _actions, _allowFailureMap);\n    }\n}\n"
+        },
+        "src/modules/trustless-execution/SmartAccountTrustlessExecutionLib.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {SmartAccountERC165Lib} from \"../erc165/SmartAccountERC165Lib.sol\";\nimport {SmartAccountModulesLib} from \"../SmartAccountModulesLib.sol\";\n\nimport {ISmartAccountTrustlessExecution} from \"./ISmartAccountTrustlessExecution.sol\";\n\nuint256 constant MAX_ACTIONS = 256;\n\nlibrary SmartAccountTrustlessExecutionLib {\n    bytes32 constant STORAGE_POSITION = keccak256(\"execution.trustless.modules.smartaccount.plopmenz\");\n\n    struct Storage {\n        mapping(address executor => bool allowed) executePermission;\n    }\n\n    function getStorage() internal pure returns (Storage storage s) {\n        bytes32 position = STORAGE_POSITION;\n        assembly {\n            s.slot := position\n        }\n    }\n\n    /// @notice Sets the interfaces implemented by this contract to (un)supported.\n    function setInterfaces(bool supported) internal {\n        SmartAccountERC165Lib.setInterfaceSupport(type(ISmartAccountTrustlessExecution).interfaceId, supported);\n    }\n\n    /// @notice Installs all functions, interfaces, and performs storage initialization of this module.\n    function fullInstall(address module) internal {\n        SmartAccountModulesLib.setModule(ISmartAccountTrustlessExecution.execute.selector, module);\n        setInterfaces(true);\n    }\n\n    /// @notice Uninstalls all functions and interfaces of this module.\n    function fullUninstall() internal {\n        SmartAccountModulesLib.setModule(ISmartAccountTrustlessExecution.execute.selector, address(0));\n        setInterfaces(false);\n    }\n\n    /// @notice Reverts if `account` is not allowed to execute actions for this smart account.\n    function ensureHasExecutePermission(address account) internal view {\n        if (!getStorage().executePermission[account]) {\n            revert ISmartAccountTrustlessExecution.NoExecutePermission(account);\n        }\n    }\n\n    /// @notice Sets if `account` is allowed to execute actions for this smart account.\n    function setExecutePermission(address account, bool allowed) internal {\n        getStorage().executePermission[account] = allowed;\n        emit ISmartAccountTrustlessExecution.ExecutePermissionSet(account, allowed);\n    }\n\n    /// Source: https://github.com/aragon/osx/blob/develop/packages/contracts/src/core/dao/DAO.sol\n    /// @notice Executes a list of actions. If a zero allow-failure map is provided, a failing action reverts the entire execution. If a non-zero allow-failure map is provided, allowed actions can fail without the entire call being reverted.\n    /// @param _callId The ID of the call. The definition of the value of `callId` is up to the calling contract and can be used, e.g., as a nonce.\n    /// @param _actions The array of actions.\n    /// @param _allowFailureMap A bitmap allowing execution to succeed, even if individual actions might revert. If the bit at index `i` is 1, the execution succeeds even if the `i`th action reverts. A failure map value of 0 requires every action to not revert.\n    /// @return execResults The array of results obtained from the executed actions in `bytes`.\n    /// @return failureMap The resulting failure map containing the actions have actually failed.\n    function execute(\n        bytes32 _callId,\n        ISmartAccountTrustlessExecution.Action[] calldata _actions,\n        uint256 _allowFailureMap\n    ) internal returns (bytes[] memory execResults, uint256 failureMap) {\n        ensureHasExecutePermission(msg.sender);\n\n        // Check that the action array length is within bounds.\n        if (_actions.length > MAX_ACTIONS) {\n            revert ISmartAccountTrustlessExecution.TooManyActions();\n        }\n\n        execResults = new bytes[](_actions.length);\n\n        uint256 gasBefore;\n        uint256 gasAfter;\n\n        for (uint256 i = 0; i < _actions.length;) {\n            gasBefore = gasleft();\n\n            (bool success, bytes memory result) = _actions[i].to.call{value: _actions[i].value}(_actions[i].data);\n            gasAfter = gasleft();\n\n            // Check if failure is allowed\n            if (!hasBit(_allowFailureMap, uint8(i))) {\n                // Check if the call failed.\n                if (!success) {\n                    revert ISmartAccountTrustlessExecution.ActionFailed(i);\n                }\n            } else {\n                // Check if the call failed.\n                if (!success) {\n                    // Make sure that the action call did not fail because 63/64 of `gasleft()` was insufficient to execute the external call `.to.call` (see [ERC-150](https://eips.ethereum.org/EIPS/eip-150)).\n                    // In specific scenarios, i.e. proposal execution where the last action in the action array is allowed to fail, the account calling `execute` could force-fail this action by setting a gas limit\n                    // where 63/64 is insufficient causing the `.to.call` to fail, but where the remaining 1/64 gas are sufficient to successfully finish the `execute` call.\n                    if (gasAfter < gasBefore / 64) {\n                        revert ISmartAccountTrustlessExecution.InsufficientGas();\n                    }\n\n                    // Store that this action failed.\n                    failureMap = flipBit(failureMap, uint8(i));\n                }\n            }\n\n            execResults[i] = result;\n\n            unchecked {\n                ++i;\n            }\n        }\n\n        emit ISmartAccountTrustlessExecution.Executed({\n            actor: msg.sender,\n            callId: _callId,\n            actions: _actions,\n            allowFailureMap: _allowFailureMap,\n            failureMap: failureMap,\n            execResults: execResults\n        });\n    }\n\n    /// Source: https://github.com/aragon/osx-commons/blob/develop/contracts/src/utils/math/BitMap.sol\n    /// @param bitmap The `uint256` representation of bits.\n    /// @param index The index number to check whether 1 or 0 is set.\n    /// @return Returns `true` if the bit is set at `index` on `bitmap`.\n    function hasBit(uint256 bitmap, uint8 index) internal pure returns (bool) {\n        uint256 bitValue = bitmap & (1 << index);\n        return bitValue > 0;\n    }\n\n    /// Source: https://github.com/aragon/osx-commons/blob/develop/contracts/src/utils/math/BitMap.sol\n    /// @param bitmap The `uint256` representation of bits.\n    /// @param index The index number to set the bit.\n    /// @return Returns a new number in which the bit is set at `index`.\n    function flipBit(uint256 bitmap, uint8 index) internal pure returns (uint256) {\n        return bitmap ^ (1 << index);\n    }\n}\n"
+        }
+      },
+      "settings": {
+        "remappings": [
+          "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+          "ds-test/=lib/openzeppelin-contracts/lib/forge-std/lib/ds-test/src/",
+          "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+          "forge-std/=lib/forge-std/src/",
+          "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+        ],
+        "optimizer": { "enabled": true, "runs": 200 },
+        "evmVersion": "shanghai",
+        "viaIR": true
+      },
+      "metadata": { "useLiteralContent": true }
+    },
+    "license": "MIT"
+  },
+  "source": "/home/plopmenz/smart-account",
+  "submitted": {
+    "transactionHash": "0x30d22627b7521727747cc4897a3ee978bd6d1a24a6d89efc6f710505dd0d9f17",
+    "date": "2024-03-31T15:16:36.896Z"
+  }
+}
