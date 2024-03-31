@@ -1,4 +1,5 @@
-export const SmartAccountContract = {
+// Abi of smart account using BaseInstaller
+export const SmartAccountBaseContract = {
   abi: [
     // Smart Account
     {
