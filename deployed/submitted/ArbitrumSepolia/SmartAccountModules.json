@@ -1,76 +1,90 @@
 {
   "type": "deployment",
-  "id": "SmartAccountERC165",
-  "batch": "Mumbai",
-  "batchIndex": 2,
-  "deploymentAddress": "0xCa9FE66b1b6903c41e1A61eE20582bf48137765E",
+  "id": "SmartAccountModules",
+  "batch": "ArbitrumSepolia",
+  "batchIndex": 0,
+  "deploymentAddress": "0xdF19f5Fcd5F8F1bd3C387422FC65109F5117F990",
   "constructorArgs": [],
   "to": "0x4e59b44847b379578588920ca78fbf26c0b4956c",
   "value": "0",
-  "data": "0x000000000000000000000000000000000000000000000000706c6f706d656e7a608080604052346100155760cf908161001a8239f35b5f80fdfe60808060405260043610156011575f80fd5b5f3560e01c6301ffc9a7146023575f80fd5b3460955760203660031901126095576004359063ffffffff60e01b8216809203609557816020925f527f1164ff701c332a936c6fdd0cee9b71313a2f7a4aebd6e4eb4e5f25a54a3bd7d7835260ff60405f2054169081156085575b5015158152f35b6301ffc9a760e01b1490505f607e565b5f80fdfea264697066735822122047e3cff57baaaea089ab593c3331b115f4619c45af6ab9690fa0a2cd256eddf664736f6c63430008170033",
-  "gas": "99210",
+  "data": "0x000000000000000000000000000000000000000000000000706c6f706d656e7a608080604052346100155760bd908161001a8239f35b5f80fdfe60808060405260043610156011575f80fd5b5f3560e01c63dcef0069146023575f80fd5b3460835760203660031901126083576004359063ffffffff60e01b82168092036083575f9182527f56a2f102f06100e6e9193cce9cca60c6a83719df4146213240bdd4963e5931ba60209081526040909220546001600160a01b03168152f35b5f80fdfea26469706673582212209c8ed67afa2377a6b512662ca1f1e2ea0158fe9651de164f74e0beec8ce2868a64736f6c63430008170033",
+  "gas": "95221",
   "from": "0x519ce4C129a981B2CBB4C3990B1391dA24E8EbF3",
   "transactionSettings": {
-    "chainId": 80001,
-    "nonce": "2",
-    "baseFee": "60482557466",
-    "priorityFee": "1000000000"
+    "chainId": 421614,
+    "nonce": "0",
+    "baseFee": "759030000",
+    "priorityFee": "100000000"
   },
   "salt": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000plopmenz",
   "artifact": {
     "abi": [
       {
         "type": "function",
-        "name": "supportsInterface",
+        "name": "getModule",
         "inputs": [
-          { "name": "interfaceId", "type": "bytes4", "internalType": "bytes4" }
+          {
+            "name": "functionSelector",
+            "type": "bytes4",
+            "internalType": "bytes4"
+          }
         ],
-        "outputs": [{ "name": "", "type": "bool", "internalType": "bool" }],
+        "outputs": [
+          { "name": "module", "type": "address", "internalType": "address" }
+        ],
         "stateMutability": "view"
       },
       {
         "type": "event",
-        "name": "InterfaceSupportedChanged",
+        "name": "ModuleSet",
         "inputs": [
           {
-            "name": "interfaceId",
+            "name": "functionSelector",
             "type": "bytes4",
-            "indexed": true,
+            "indexed": false,
             "internalType": "bytes4"
           },
           {
-            "name": "supported",
-            "type": "bool",
+            "name": "module",
+            "type": "address",
             "indexed": false,
-            "internalType": "bool"
+            "internalType": "address"
           }
         ],
         "anonymous": false
+      },
+      {
+        "type": "error",
+        "name": "FunctionNotFound",
+        "inputs": [
+          {
+            "name": "functionSelector",
+            "type": "bytes4",
+            "internalType": "bytes4"
+          }
+        ]
       }
     ],
-    "bytecode": "0x608080604052346100155760cf908161001a8239f35b5f80fdfe60808060405260043610156011575f80fd5b5f3560e01c6301ffc9a7146023575f80fd5b3460955760203660031901126095576004359063ffffffff60e01b8216809203609557816020925f527f1164ff701c332a936c6fdd0cee9b71313a2f7a4aebd6e4eb4e5f25a54a3bd7d7835260ff60405f2054169081156085575b5015158152f35b6301ffc9a760e01b1490505f607e565b5f80fdfea264697066735822122047e3cff57baaaea089ab593c3331b115f4619c45af6ab9690fa0a2cd256eddf664736f6c63430008170033",
+    "bytecode": "0x608080604052346100155760bd908161001a8239f35b5f80fdfe60808060405260043610156011575f80fd5b5f3560e01c63dcef0069146023575f80fd5b3460835760203660031901126083576004359063ffffffff60e01b82168092036083575f9182527f56a2f102f06100e6e9193cce9cca60c6a83719df4146213240bdd4963e5931ba60209081526040909220546001600160a01b03168152f35b5f80fdfea26469706673582212209c8ed67afa2377a6b512662ca1f1e2ea0158fe9651de164f74e0beec8ce2868a64736f6c63430008170033",
     "compiler": { "version": "v0.8.23+commit.f704f362" },
-    "contractName": "src/modules/erc165/SmartAccountERC165.sol:SmartAccountERC165",
+    "contractName": "src/modules/SmartAccountModules.sol:SmartAccountModules",
     "jsonDescription": {
       "language": "Solidity",
       "sources": {
-        "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol": {
-          "content": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v5.0.0) (utils/introspection/ERC165.sol)\n\npragma solidity ^0.8.20;\n\nimport {IERC165} from \"./IERC165.sol\";\n\n/**\n * @dev Implementation of the {IERC165} interface.\n *\n * Contracts that want to implement ERC165 should inherit from this contract and override {supportsInterface} to check\n * for the additional interface id that will be supported. For example:\n *\n * ```solidity\n * function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {\n *     return interfaceId == type(MyInterface).interfaceId || super.supportsInterface(interfaceId);\n * }\n * ```\n */\nabstract contract ERC165 is IERC165 {\n    /**\n     * @dev See {IERC165-supportsInterface}.\n     */\n    function supportsInterface(bytes4 interfaceId) public view virtual returns (bool) {\n        return interfaceId == type(IERC165).interfaceId;\n    }\n}\n"
-        },
         "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol": {
           "content": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v5.0.0) (utils/introspection/IERC165.sol)\n\npragma solidity ^0.8.20;\n\n/**\n * @dev Interface of the ERC165 standard, as defined in the\n * https://eips.ethereum.org/EIPS/eip-165[EIP].\n *\n * Implementers can declare support of contract interfaces, which can then be\n * queried by others ({ERC165Checker}).\n *\n * For an implementation, see {ERC165}.\n */\ninterface IERC165 {\n    /**\n     * @dev Returns true if this contract implements the interface defined by\n     * `interfaceId`. See the corresponding\n     * https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section]\n     * to learn more about how these ids are created.\n     *\n     * This function call must use less than 30 000 gas.\n     */\n    function supportsInterface(bytes4 interfaceId) external view returns (bool);\n}\n"
         },
         "src/modules/ISmartAccountModules.sol": {
           "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ninterface ISmartAccountModules {\n    /// @notice When no function exists for function called\n    error FunctionNotFound(bytes4 functionSelector);\n\n    /// @notice Module is added/updated/removed.\n    event ModuleSet(bytes4 functionSelector, address module);\n\n    /// @notice Set the currently registered module for function.\n    /// @dev Zero address means no module is registered.\n    function getModule(bytes4 functionSelector) external view returns (address module);\n}\n"
         },
+        "src/modules/SmartAccountModules.sol": {
+          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {SmartAccountModulesLib, ISmartAccountModules} from \"./SmartAccountModulesLib.sol\";\n\ncontract SmartAccountModules is ISmartAccountModules {\n    /// @inheritdoc ISmartAccountModules\n    function getModule(bytes4 functionSelector) external view returns (address module) {\n        return SmartAccountModulesLib.getModule(functionSelector);\n    }\n}\n"
+        },
         "src/modules/SmartAccountModulesLib.sol": {
           "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {SmartAccountERC165Lib} from \"./erc165/SmartAccountERC165Lib.sol\";\n\nimport {ISmartAccountModules} from \"./ISmartAccountModules.sol\";\n\n// Inspired by ERC-2535\nlibrary SmartAccountModulesLib {\n    bytes32 constant STORAGE_POSITION = keccak256(\"modules.smartaccount.plopmenz\");\n\n    struct Storage {\n        mapping(bytes4 functionSelector => address module) getFunction;\n    }\n\n    function getStorage() internal pure returns (Storage storage s) {\n        bytes32 position = STORAGE_POSITION;\n        assembly {\n            s.slot := position\n        }\n    }\n\n    /// @notice Sets the interfaces implemented by this contract to (un)supported.\n    function setInterfaces(bool supported) internal {\n        SmartAccountERC165Lib.setInterfaceSupport(type(ISmartAccountModules).interfaceId, supported);\n    }\n\n    /// @notice Installs all functions, interfaces, and performs storage initialization of this module.\n    function fullInstall(address module) internal {\n        setModule(ISmartAccountModules.getModule.selector, module);\n        setInterfaces(true);\n    }\n\n    /// @notice Uninstalls all functions and interfaces of this module.\n    function fullUninstall() internal {\n        setModule(ISmartAccountModules.getModule.selector, address(0));\n        setInterfaces(false);\n    }\n\n    /// @notice Get the currently registered module for function.\n    function getModule(bytes4 functionSelector) internal view returns (address module) {\n        return getStorage().getFunction[functionSelector];\n    }\n\n    /// @notice Set the currently registered module for function.\n    /// @dev Set to zero address to remove.\n    function setModule(bytes4 functionSelector, address module) internal {\n        getStorage().getFunction[functionSelector] = module;\n        emit ISmartAccountModules.ModuleSet(functionSelector, module);\n    }\n\n    /// @notice Delegates the current msg call to a module, if one is registered for that function.\n    function callModule() internal {\n        // Get module from function selector\n        address module = getModule(msg.sig);\n        if (module == address(0)) {\n            revert ISmartAccountModules.FunctionNotFound(msg.sig);\n        }\n        // Execute external function from module using delegatecall and return any value.\n        assembly {\n            // Copy function selector and any arguments\n            calldatacopy(0, 0, calldatasize())\n            // Execute function call using the module\n            let result := delegatecall(gas(), module, 0, calldatasize(), 0, 0)\n            // Get any return value\n            returndatacopy(0, 0, returndatasize())\n            // Return any return value or error back to the caller\n            switch result\n            case 0 { revert(0, returndatasize()) }\n            default { return(0, returndatasize()) }\n        }\n    }\n}\n"
         },
         "src/modules/erc165/ISmartAccountERC165.sol": {
           "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {IERC165} from \"../../../lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol\";\n\ninterface ISmartAccountERC165 is IERC165 {\n    /// @notice Interface support changed.\n    event InterfaceSupportedChanged(bytes4 indexed interfaceId, bool supported);\n}\n"
-        },
-        "src/modules/erc165/SmartAccountERC165.sol": {
-          "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {ERC165} from \"../../../lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol\";\n\nimport {SmartAccountERC165Lib, ISmartAccountERC165, IERC165} from \"./SmartAccountERC165Lib.sol\";\n\ncontract SmartAccountERC165 is ERC165, ISmartAccountERC165 {\n    /// @inheritdoc ERC165\n    function supportsInterface(bytes4 interfaceId) public view override(ERC165, IERC165) returns (bool) {\n        return SmartAccountERC165Lib.supportsInterface(interfaceId) || super.supportsInterface(interfaceId);\n    }\n}\n"
         },
         "src/modules/erc165/SmartAccountERC165Lib.sol": {
           "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\nimport {SmartAccountModulesLib} from \"../SmartAccountModulesLib.sol\";\n\nimport {ISmartAccountERC165, IERC165} from \"./ISmartAccountERC165.sol\";\n\nlibrary SmartAccountERC165Lib {\n    bytes32 constant STORAGE_POSITION = keccak256(\"erc165.modules.smartaccount.plopmenz\");\n\n    struct Storage {\n        mapping(bytes4 interfaceId => bool supported) getSupported;\n    }\n\n    function getStorage() internal pure returns (Storage storage s) {\n        bytes32 position = STORAGE_POSITION;\n        assembly {\n            s.slot := position\n        }\n    }\n\n    /// @notice Installs all functions, interfaces, and performs storage initialization of this module.\n    function fullInstall(address module) internal {\n        SmartAccountModulesLib.setModule(IERC165.supportsInterface.selector, module);\n    }\n\n    /// @notice Uninstalls all functions and interfaces of this module.\n    function fullUninstall() internal {\n        SmartAccountModulesLib.setModule(IERC165.supportsInterface.selector, address(0));\n    }\n\n    /// @notice Gets the interfaces supported by the Smart Account.\n    function supportsInterface(bytes4 interfaceId) internal view returns (bool supported) {\n        return getStorage().getSupported[interfaceId];\n    }\n\n    /// @notice Updates the interfaces supported by the Smart Account.\n    function setInterfaceSupport(bytes4 interfaceId, bool supported) internal {\n        getStorage().getSupported[interfaceId] = supported;\n        emit ISmartAccountERC165.InterfaceSupportedChanged(interfaceId, supported);\n    }\n}\n"
@@ -94,7 +108,7 @@
   },
   "source": "/home/plopmenz/smart-account",
   "submitted": {
-    "transactionHash": "0xab1fa0a6a4211dcc33c5165b965a2cb1e98c10cf2bc84a818ea86f0b9375ce0c",
-    "date": "2024-03-31T15:16:27.488Z"
+    "transactionHash": "0x287ffcb15ecb59e9a4a3fec2799ff0816dab1f4dd2aedf331f4428507bbd7078",
+    "date": "2024-04-15T17:16:29.624Z"
   }
 }

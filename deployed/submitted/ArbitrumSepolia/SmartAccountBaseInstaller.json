@@ -1,7 +1,7 @@
 {
   "type": "deployment",
   "id": "SmartAccountBaseInstaller",
-  "batch": "Mumbai",
+  "batch": "ArbitrumSepolia",
   "batchIndex": 4,
   "deploymentAddress": "0x4811864B715C0F1B0f9790a8ee6F11dC25b7F258",
   "constructorArgs": [
@@ -15,10 +15,10 @@
   "gas": "413992",
   "from": "0x519ce4C129a981B2CBB4C3990B1391dA24E8EbF3",
   "transactionSettings": {
-    "chainId": 80001,
+    "chainId": 421614,
     "nonce": "4",
-    "baseFee": "60482557466",
-    "priorityFee": "1000000000"
+    "baseFee": "759030000",
+    "priorityFee": "100000000"
   },
   "salt": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000plopmenz",
   "artifact": {
@@ -234,7 +234,7 @@
   },
   "source": "/home/plopmenz/smart-account",
   "submitted": {
-    "transactionHash": "0x236aedad6011c3a8fc800b7d44af0e5afe7a97ecdd492142cacfa45293cee840",
-    "date": "2024-03-31T15:16:45.295Z"
+    "transactionHash": "0x9832424bcfd1ff7f112ab1b5c96db3f44be47cbe1e92c169b8038da752fcb527",
+    "date": "2024-04-15T17:17:35.170Z"
   }
 }
