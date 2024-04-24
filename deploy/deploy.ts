@@ -90,23 +90,23 @@ export async function deploy(
     }
   }
 
-  const smartAccountModules = await deploySmartAccountModules(
-    deployer,
-    settings?.modulesSettings ?? {}
-  );
+  // const smartAccountModules = await deploySmartAccountModules(
+  //   deployer,
+  //   settings?.modulesSettings ?? {}
+  // );
 
-  const ownable = await deploySmartAccountOwnable(
-    deployer,
-    settings?.ownableSettings ?? {}
-  );
-  const erc165 = await deploySmartAccountERC165(
-    deployer,
-    settings?.erc165Settings ?? {}
-  );
-  const trustlessExecution = await deploySmartAccountTrustlessExecution(
-    deployer,
-    settings?.trustlessExecutionSettings ?? {}
-  );
+  // const ownable = await deploySmartAccountOwnable(
+  //   deployer,
+  //   settings?.ownableSettings ?? {}
+  // );
+  // const erc165 = await deploySmartAccountERC165(
+  //   deployer,
+  //   settings?.erc165Settings ?? {}
+  // );
+  // const trustlessExecution = await deploySmartAccountTrustlessExecution(
+  //   deployer,
+  //   settings?.trustlessExecutionSettings ?? {}
+  // );
   const erc721Receiver = await deploySmartAccountERC721Receiver(
     deployer,
     settings?.erc721ReceiverSettings ?? {}
@@ -116,15 +116,15 @@ export async function deploy(
     settings?.erc1155ReceiverSettings ?? {}
   );
 
-  const smartAccountBaseInstaller = await deploySmartAccountBaseInstaller(
-    deployer,
-    {
-      modules: smartAccountModules,
-      ownable: ownable,
-      erc165: erc165,
-      ...(settings?.baseInstallerSettings ?? {}),
-    }
-  );
+  // const smartAccountBaseInstaller = await deploySmartAccountBaseInstaller(
+  //   deployer,
+  //   {
+  //     modules: smartAccountModules,
+  //     ownable: ownable,
+  //     erc165: erc165,
+  //     ...(settings?.baseInstallerSettings ?? {}),
+  //   }
+  // );
   const erc721ReceiverInstaller =
     await deploySmartAccountERC721ReceiverInstaller(deployer, {
       erc721Receiver: erc721Receiver,
@@ -143,24 +143,39 @@ export async function deploy(
   //   owner: deployer.settings.defaultFrom,
   // });
 
-  const deployment: SmartAccountDeployment = {
-    smartAccountModules: smartAccountModules,
+  // const deployment: SmartAccountDeployment = {
+  //   smartAccountModules: smartAccountModules,
+  //   installers: {
+  //     smartAccountBase: smartAccountBaseInstaller,
+  //     erc721Receiver: erc721ReceiverInstaller,
+  //     erc1155Receiver: erc1155ReceiverInstaller,
+  //   },
+  //   modules: {
+  //     ownable: ownable,
+  //     erc165: erc165,
+  //     trustlessExecution: trustlessExecution,
+  //     erc721Receiver: erc721Receiver,
+  //     erc1155Receiver: erc1155Receiver,
+  //   },
+  // };
+  // await deployer.saveDeployment({
+  //   deploymentName: "latest.json",
+  //   deployment: deployment,
+  // });
+  // return deployment;
+  return {
+    smartAccountModules: "0xdF19f5Fcd5F8F1bd3C387422FC65109F5117F990",
     installers: {
-      smartAccountBase: smartAccountBaseInstaller,
-      erc721Receiver: erc721ReceiverInstaller,
-      erc1155Receiver: erc1155ReceiverInstaller,
+      smartAccountBase: "0x4811864B715C0F1B0f9790a8ee6F11dC25b7F258",
+      erc721Receiver: "0x03d38803e07e0A2Fa5F934B352A281Ebc9027D42",
+      erc1155Receiver: "0x5769C66bBCF8963950C41ace86Bbd15B7D0Ec084",
     },
     modules: {
-      ownable: ownable,
-      erc165: erc165,
-      trustlessExecution: trustlessExecution,
-      erc721Receiver: erc721Receiver,
-      erc1155Receiver: erc1155Receiver,
+      ownable: "0x2F3Cec4e1ACF883adD5A426c56789242612c2F39",
+      erc165: "0xCa9FE66b1b6903c41e1A61eE20582bf48137765E",
+      trustlessExecution: "0x9478eaab9F531533487c220C451820c3c7901e6b",
+      erc721Receiver: "0x4433B7Fcd9b90dACf14A54d55c3f6626C834f6E5",
+      erc1155Receiver: "0xb757F77ca6c64562D0C73B6b3635825ca80A89A8",
     },
   };
-  await deployer.saveDeployment({
-    deploymentName: "latest.json",
-    deployment: deployment,
-  });
-  return deployment;
 }
