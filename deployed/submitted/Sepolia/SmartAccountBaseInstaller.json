@@ -2,7 +2,7 @@
   "type": "deployment",
   "id": "SmartAccountBaseInstaller",
   "batch": "Sepolia",
-  "batchIndex": 4,
+  "batchIndex": 6,
   "deploymentAddress": "0x4811864B715C0F1B0f9790a8ee6F11dC25b7F258",
   "constructorArgs": [
     "0xdF19f5Fcd5F8F1bd3C387422FC65109F5117F990",

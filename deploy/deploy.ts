@@ -20,28 +20,60 @@ import {
   DeploySmartAccountTrustlessExecutionSettings,
   deploySmartAccountTrustlessExecution,
 } from "./internal/SmartAccountTrustlessExecution";
+import {
+  DeploySmartAccountERC721ReceiverSettings,
+  deploySmartAccountERC721Receiver,
+} from "./internal/SmartAccountERC721Receiver";
+import {
+  DeploySmartAccountERC1155ReceiverSettings,
+  deploySmartAccountERC1155Receiver,
+} from "./internal/SmartAccountERC1155Receiver";
+import {
+  DeploySmartAccountERC721ReceiverInstallerSettings,
+  deploySmartAccountERC721ReceiverInstaller,
+} from "./internal/SmartAccountERC721ReceiverInstaller";
+import {
+  DeploySmartAccountERC1155ReceiverInstallerSettings,
+  deploySmartAccountERC1155ReceiverInstaller,
+} from "./internal/SmartAccountERC1155ReceiverInstaller";
 
 export interface SmartAccountDeploymentSettings {
   modulesSettings: DeploySmartAccountModulesSettings;
-  setupSettings: Omit<
+  baseInstallerSettings: Omit<
     DeploySmartAccountBaseInstallerSettings,
-    "modules" | "ownable" | "erc165" | "multicall"
+    "modules" | "ownable" | "erc165"
+  >;
+  erc721ReceiverInstallerSettings: Omit<
+    DeploySmartAccountERC721ReceiverInstallerSettings,
+    "erc721Receiver"
+  >;
+  erc1155ReceiverInstallerSettings: Omit<
+    DeploySmartAccountERC1155ReceiverInstallerSettings,
+    "erc1155Receiver"
   >;
 
   ownableSettings: DeploySmartAccountOwnableSettings;
   erc165Settings: DeploySmartAccountERC165Settings;
   trustlessExecutionSettings: DeploySmartAccountTrustlessExecutionSettings;
+  erc721ReceiverSettings: DeploySmartAccountERC721ReceiverSettings;
+  erc1155ReceiverSettings: DeploySmartAccountERC1155ReceiverSettings;
 
   forceRedeploy?: boolean;
 }
 
 export interface SmartAccountDeployment {
   smartAccountModules: Address;
-  smartAccountBaseInstaller: Address;
+  installers: {
+    smartAccountBase: Address;
+    erc721Receiver: Address;
+    erc1155Receiver: Address;
+  };
   modules: {
     ownable: Address;
     erc165: Address;
     trustlessExecution: Address;
+    erc721Receiver: Address;
+    erc1155Receiver: Address;
   };
 }
 
@@ -75,6 +107,14 @@ export async function deploy(
     deployer,
     settings?.trustlessExecutionSettings ?? {}
   );
+  const erc721Receiver = await deploySmartAccountERC721Receiver(
+    deployer,
+    settings?.erc721ReceiverSettings ?? {}
+  );
+  const erc1155Receiver = await deploySmartAccountERC1155Receiver(
+    deployer,
+    settings?.erc1155ReceiverSettings ?? {}
+  );
 
   const smartAccountBaseInstaller = await deploySmartAccountBaseInstaller(
     deployer,
@@ -82,9 +122,19 @@ export async function deploy(
       modules: smartAccountModules,
       ownable: ownable,
       erc165: erc165,
-      ...(settings?.setupSettings ?? {}),
+      ...(settings?.baseInstallerSettings ?? {}),
     }
   );
+  const erc721ReceiverInstaller =
+    await deploySmartAccountERC721ReceiverInstaller(deployer, {
+      erc721Receiver: erc721Receiver,
+      ...(settings?.baseInstallerSettings ?? {}),
+    });
+  const erc1155ReceiverInstaller =
+    await deploySmartAccountERC1155ReceiverInstaller(deployer, {
+      erc1155Receiver: erc1155Receiver,
+      ...(settings?.baseInstallerSettings ?? {}),
+    });
 
   // Example deployment:
   // await deploySmartAccount(deployer, {
@@ -93,13 +143,19 @@ export async function deploy(
   //   owner: deployer.settings.defaultFrom,
   // });
 
-  const deployment = {
+  const deployment: SmartAccountDeployment = {
     smartAccountModules: smartAccountModules,
-    smartAccountBaseInstaller: smartAccountBaseInstaller,
+    installers: {
+      smartAccountBase: smartAccountBaseInstaller,
+      erc721Receiver: erc721ReceiverInstaller,
+      erc1155Receiver: erc1155ReceiverInstaller,
+    },
     modules: {
       ownable: ownable,
       erc165: erc165,
       trustlessExecution: trustlessExecution,
+      erc721Receiver: erc721Receiver,
+      erc1155Receiver: erc1155Receiver,
     },
   };
   await deployer.saveDeployment({
