@@ -1,7 +1,7 @@
 {
   "type": "deployment",
   "id": "SmartAccountTrustlessExecution",
-  "batch": "BaseSepolia",
+  "batch": "Polygon",
   "batchIndex": 3,
   "deploymentAddress": "0x9478eaab9F531533487c220C451820c3c7901e6b",
   "constructorArgs": [],
@@ -11,9 +11,9 @@
   "gas": "361575",
   "from": "0x519ce4C129a981B2CBB4C3990B1391dA24E8EbF3",
   "transactionSettings": {
-    "chainId": 84532,
-    "nonce": "3",
-    "baseFee": "1100000000",
+    "chainId": 137,
+    "nonce": "127",
+    "baseFee": "79305302558",
     "priorityFee": "1000000000"
   },
   "salt": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000plopmenz",
@@ -183,7 +183,7 @@
   },
   "source": "/home/plopmenz/smart-account",
   "submitted": {
-    "transactionHash": "0xff8f0e3195f1c5481ba5e24d74d1b17136ea75804f66ad8e0a930f31db90fcbf",
-    "date": "2024-04-15T17:43:28.031Z"
+    "transactionHash": "0x18afcdf55f6a900d6bfdd8ff91ee52c3af9109cb3e4deb2a4466a8ec22615929",
+    "date": "2024-04-24T07:33:12.102Z"
   }
 }
